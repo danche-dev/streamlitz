@@ -29,6 +29,7 @@ st.plotly_chart(fig_ind, use_container_width=True)
 team_df = df.groupby("tim")["skor"].sum().reset_index()
 
 fig_team = px.bar(
+    fig_ind.update_layout(xaxis_tickangle=-45),
     team_df, 
     x="tim", 
     y="skor", 
