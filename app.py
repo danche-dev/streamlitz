@@ -21,6 +21,7 @@ fig_ind = px.bar(
     title="Individualni rezultati",
     labels={"skor": "Ukupno koraka do sada", "hodac": "Hodac"}
 )
+fig_ind.update_layout(xaxis_tickangle=-45)
 st.plotly_chart(fig_ind, use_container_width=True)
 
 # 3. Team Totals Chart
@@ -29,7 +30,6 @@ st.plotly_chart(fig_ind, use_container_width=True)
 team_df = df.groupby("tim")["skor"].sum().reset_index()
 
 fig_team = px.bar(
-    fig_ind.update_layout(xaxis_tickangle=-45),
     team_df, 
     x="tim", 
     y="skor", 
@@ -37,6 +37,7 @@ fig_team = px.bar(
     title="Ukupno koraka po timu",
     text_auto='.2s' # Shows the number on top of the bar
 )
+fig_team.update_layout(xaxis_tickangle=-45),
 st.plotly_chart(fig_team, use_container_width=True)
 
 # 4. Raw Data View (Optional)
