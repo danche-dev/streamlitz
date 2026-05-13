@@ -4,13 +4,13 @@ import plotly.express as px
 
 # Set page title
 st.set_page_config(page_title="Valcon Step Challenge 2026", layout="wide")
-st.title("🏃 Timski Dashboard")
+st.title("🏃 Valcon Step Challenge 2026")
 
 # 1. Load the data
 df = pd.read_csv("data.csv", encoding="utf-8-sig")
 
 # 2. Individual Steps Chart (Grouped by Team Color)
-st.subheader("Individualni rezultati")
+st.subheader("Pojedinci")
 # 'color' ensures same team = same color
 # 'hover_data' adds the date or other info to the tooltip
 fig_ind = px.bar(
@@ -24,7 +24,7 @@ fig_ind = px.bar(
 st.plotly_chart(fig_ind, use_container_width=True)
 
 # 3. Team Totals Chart
-st.subheader("Ukupno koraka po timu")
+st.subheader("Timovi")
 # Aggregate the data for the second chart
 team_df = df.groupby("tim")["skor"].sum().reset_index()
 
