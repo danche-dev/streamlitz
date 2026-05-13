@@ -10,7 +10,7 @@ st.title("🏃 Valcon Step Challenge 2026")
 df = pd.read_csv("data.csv", encoding="utf-8-sig")
 
 # 2. Individual Steps Chart (Grouped by Team Color)
-st.subheader("Pojedinci")
+st.subheader("Presjek stanja na dan 12.05.2026.")
 # 'color' ensures same team = same color
 # 'hover_data' adds the date or other info to the tooltip
 fig_ind = px.bar(
@@ -24,7 +24,7 @@ fig_ind = px.bar(
 st.plotly_chart(fig_ind, use_container_width=True)
 
 # 3. Team Totals Chart
-st.subheader("Timovi")
+#st.subheader("Timovi")
 # Aggregate the data for the second chart
 team_df = df.groupby("tim")["skor"].sum().reset_index()
 
