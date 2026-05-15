@@ -35,7 +35,7 @@ fig_team = px.bar(
     y="skor", 
     color="tim",
     title="Ukupno koraka po timu",
-    text_auto='.3s' # Shows the number on top of the bar
+    text_auto='.4s' # Shows the number on top of the bar
 )
 fig_team.update_layout(xaxis_tickangle=-45)
 st.plotly_chart(fig_team, use_container_width=True)
