@@ -10,7 +10,7 @@ st.title("🏃 Valcon Step Challenge 2026")
 df = pd.read_csv("data.csv", encoding="utf-8-sig")
 
 # 2. Individual Steps Chart (Grouped by Team Color)
-st.subheader("Ponocni presjek stanja, 13.05.2026.")
+st.subheader("Stanje na dan 15.05.2026, 7:45 ujutro")
 # 'color' ensures same team = same color
 # 'hover_data' adds the date or other info to the tooltip
 fig_ind = px.bar(
